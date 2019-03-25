@@ -1,0 +1,15 @@
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+<%= link_to 'Back', articles_path %>
+
+<h1>Listing author</h1>
+
+      <td><%= @author.name %></td>
+      <td><%= @author.city %></td>

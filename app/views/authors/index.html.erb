@@ -1,0 +1,22 @@
+<h1>Listing Authors</h1>
+ <%= link_to 'New author', new_author_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="3"></th>    <th></th>
+  </tr>
+ 
+  <% @authors.each do |author| %>
+    <tr>
+      <td><%= author.name %></td>
+      <td><%= author.city %></td>
+     <td><%= link_to 'Show', author_path(author) %></td>
+     <td><%= link_to 'Edit', edit_author_path(author.id) %></td>
+     <td><%= link_to 'Destroy', author_path(author.id),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to "Create Article", {:controller => "articles", :action => "new", :id => author.id}%></td>
+    </tr>
+  <% end %>
+</table>
